@@ -62,7 +62,10 @@ Perceptron multicamadas capaz de capturar padrões não-lineares complexos.
 ---
 
 ## ▶️ Como Executar
-
+Antes, instale as dependencias:
+```bash
+pip install -r requirements.txt
+```
 1. Execute o pré-processamento:
 ```bash
 python preprocessamento_carros.py
