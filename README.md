@@ -8,14 +8,16 @@ Este projeto aplica diversos algoritmos de aprendizado de máquina supervisionad
 ## 📁 Estrutura do Projeto
 
 - `preprocessamento_carros.py`: Realiza a limpeza, codificação e separação dos dados em treino/teste.
-- `regressao_logistica.py`: Regressão logística.
-- `arvore_decisao.py`: Árvore de decisão.
-- `rand_forest.py`: Random Forest.
+- `logistic_regression.py`: Regressão logística.
+- `decision_tree.py`: Árvore de decisão.
+- `random_forest.py`: Random Forest.
 - `knn.py`: K-Nearest Neighbors.
 - `svm.py`: Support Vector Machine.
-- `rede_neural.py`: Rede Neural (MLPClassifier).
+- `neural_network.py`: Rede Neural (MLPClassifier).
 - `comparador_final.py`: Executa todos os modelos e gera um relatório comparativo.
+- `comparador_final_com_imagens.py`: Executa todos os modelos e **gera imagens das matrizes de confusão**.
 - `comparativo_modelos.txt`: Resultado consolidado das avaliações.
+- `img/`: Contém as imagens das matrizes de confusão geradas automaticamente.
 
 ---
 
@@ -71,12 +73,21 @@ python preprocessamento_carros.py
 python logistic_regression.py
 ```
 
-3. Ou execute o comparador completo:
+3. Ou execute o comparador completo com imagens:
 ```bash
-python comparador_final.py
+python comparador_final_com_imagens.py
 ```
 
-4. Verifique os resultados em `comparativo_modelos.txt`.
+4. Verifique os resultados em:
+- `comparativo_modelos.txt` (métricas)
+- `img/` (visualizações gráficas)
+
+---
+
+## 📷 Exemplo de saída visual
+
+Cada modelo gera automaticamente uma imagem da matriz de confusão no diretório `img/`.  
+Exemplo de nome de arquivo: `random_forest_matrizconfusao.png`
 
 ---
 
@@ -91,4 +102,3 @@ python comparador_final.py
 ## 📬 Contato
 
 Para dúvidas ou sugestões, entre em contato com o responsável pelo projeto.
-
