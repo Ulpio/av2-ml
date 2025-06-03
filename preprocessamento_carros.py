@@ -2,7 +2,6 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
-
 # Carregar os dados
 df = pd.read_excel("p40.xlsx", sheet_name="2005 CAR DATA")
 
@@ -29,12 +28,16 @@ y = df_encoded["Leather"]
 # Separar dados em treino e teste
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-
+# Escalar os dados (normalização)
 scaler = StandardScaler()
-X_train = scaler.fit_transform(X_train)
-X_test = scaler.transform(X_test)
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
 
-# Salvar os conjuntos processados em CSVs (opcional)
+# Converter os arrays escalados de volta para DataFrames
+X_train = pd.DataFrame(X_train_scaled, columns=X.columns)
+X_test = pd.DataFrame(X_test_scaled, columns=X.columns)
+
+# Salvar os conjuntos processados em CSVs
 X_train.to_csv("X_train.csv", index=False)
 X_test.to_csv("X_test.csv", index=False)
 y_train.to_csv("y_train.csv", index=False)
